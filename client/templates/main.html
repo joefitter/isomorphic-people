@@ -1,9 +1,18 @@
 <template name="main">
   <div class="container-fluid">
     <header>
-      <h1>Polymorphic People</h1>
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand">Isomorphic People</a>
+        </div>
+        <ul class="nav navbar-nav">
+          {{> navigation}}
+        </ul>
+        <p class="navbar-text navbar-right" style="margin-right: 15px">
+          {{> loginButtons}}
+        </p>
+      </nav>
     </header>
-    {{> navigation}}
     {{> yield}}
   </div>
 </template>
