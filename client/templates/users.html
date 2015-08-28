@@ -1,0 +1,17 @@
+<template name="users">
+  <h2>Users</h2>
+  {{> addUser}}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>GitHub Username</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each users}}
+      {{> user}}
+    {{/each}}
+    </tbody>
+  </table>
+</template>
