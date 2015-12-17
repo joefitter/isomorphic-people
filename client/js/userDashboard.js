@@ -8,7 +8,23 @@ function updateData(response) {
       $set: {
         avatar_url: response.avatar_url
       }
-    })
+    });
+  }
+
+  if (this.public_repos !== response.public_repos) {
+    Users.update(_this._id, {
+      $set: {
+        public_repos: response.public_repos
+      }
+    });
+  }
+
+  if (this.ghName !== response.name) {
+    Users.update(_this._id, {
+      $set: {
+        ghName: response.name
+      }
+    });
   }
 }
 
@@ -16,7 +32,6 @@ fetch('https://api.github.com/users/' + this.ghUser)
   .then(function(response) {
     return response.json();
   }).then(function(json) {
-    console.log(json)
     updateData(json);
   }).catch(function(err) {
     console.log(err);

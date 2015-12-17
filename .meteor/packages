@@ -11,3 +11,4 @@ less
 nemo64:bootstrap
 iron:router
 timbrandin:fetch
+meteorhacks:ssr
